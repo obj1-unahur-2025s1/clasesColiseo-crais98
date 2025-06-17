@@ -33,7 +33,7 @@ class mirmillones{
   }
   method poderDeAtaque() = arma.daño() + fuerza
   method recibirDaño(unOponente, cantidad){
-    salud = 0.max(salud -  )
+    salud = 0.max(salud - cantidad)
   }
 }
 
@@ -47,5 +47,12 @@ class dimachaerus{
   method cambiarArmadura(unaArmadura){}// no es necesario
   method fuerza() = 10
   method poderDeAtaque() = self.fuerza() + armas.sum({a=>a.daño()})
+  method atacar(unOponente){
+    unOponente.recibirDaño(self, 0.max(poderDeAtaque() - unOponente.defensa()))
     destreza = destreza + 1
+  }
+  method recibirDaño(unOponente, cantidad){
+    salud = 0.max(salud - cantidad)
+  }
+
 }
