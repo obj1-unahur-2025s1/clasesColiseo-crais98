@@ -19,9 +19,10 @@ class mirmillones{
   method cambiarArmaA(unArma){
     arma = unArma
   }
-  method defensa(){
+  method puntosArmadura(){
     proteccion = proteccion + if(armadura==casco) 10 else 5 + self.destreza()*0.1
-  }
+  }// como manejo casco o escudo?
+  method defensa() = self.puntosArmadura + destreza
   method destreza() = 15
   method cambiarArmadura(unaArmadura){
     armadura = unaArmadura
@@ -41,7 +42,7 @@ class dimachaerus{
   var salud = 100
   var destreza
   method cambiarArmaA(unArma){} // deberia ser distinto, agrega el arma a la lista y descarta la que tiene actualmente?
-  method defensa()= 0
+  method defensa()= 0.max(destreza/2)
   method destreza() = destreza 
   method cambiarArmadura(unaArmadura){}// no es necesario
   method fuerza() = 10
