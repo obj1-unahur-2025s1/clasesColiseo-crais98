@@ -34,12 +34,19 @@ class mirmillones{
   method recibirDaño(unOponente, cantidad){
     salud = 0.max(salud - cantidad)
   }
+  method pelearCon(unOponente){
+    if(unOponente.salud() > 0){ // será necesario preguntar la salud de self?
+       self.atacar(unOponente)
+       unOponente.atacar(self)
+    }
+  }
+  method salud() = salud
 }
 
 class dimachaerus{
   const armas = []
   var salud = 100
-  var destreza
+  var destrezas
   method cambiarArmaA(unArma){} // deberia ser distinto, agrega el arma a la lista y descarta la que tiene actualmente?
   method defensa()= 0.max(destreza/2)
   method destreza() = destreza 
@@ -53,5 +60,11 @@ class dimachaerus{
   method recibirDaño(unOponente, cantidad){
     salud = 0.max(salud - cantidad)
   }
-
+  method pelearCon(unOponente){
+    if(unOponente.salud() > 0){ // será necesario preguntar la salud de self?
+       self.atacar(unOponente)
+       unOponente.atacar(self)
+    }
+  }
+  method salud() = salud
 }
