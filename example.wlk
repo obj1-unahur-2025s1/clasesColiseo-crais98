@@ -1,9 +1,50 @@
-object pepita {
-  var energy = 100
+class ArmaFilo{
+  var filo
+  var longitud 
+  method daño() = 0.max(filo).min(1)*longitud
+}
 
-  method energy() = energy
+class ArmaContundente{
+  var peso
+  method daño() = peso
+}
 
-  method fly(minutes) {
-    energy = energy - minutes * 3
+class mirmillones{
+  var salud = 100
+  var arma
+  var armadura
+  var proteccion = 0
+  var fuerza
+  var daño = 0
+  method cambiarArmaA(unArma){
+    arma = unArma
   }
+  method defensa(){
+    proteccion = proteccion + if(armadura==casco) 10 else 5 + self.destreza()*0.1
+  }
+  method destreza() = 15
+  method cambiarArmadura(unaArmadura){
+    armadura = unaArmadura
+  }
+  method fuerza() = fuerza
+  method atacar(unOponente){
+    unOponente.recibirDaño(self, 0.max(poderDeAtaque() - unOponente.defensa()))
+  }
+  method poderDeAtaque() = arma.daño() + fuerza
+  method recibirDaño(unOponente, cantidad){
+    salud = 0.max(salud -  )
+  }
+}
+
+class dimachaerus{
+  const armas = []
+  var salud = 100
+  var destreza
+  method cambiarArmaA(unArma){} // deberia ser distinto, agrega el arma a la lista y descarta la que tiene actualmente?
+  method defensa()= 0
+  method destreza() = destreza 
+  method cambiarArmadura(unaArmadura){}// no es necesario
+  method fuerza() = 10
+  method poderDeAtaque() = self.fuerza() + armas.sum({a=>a.daño()})
+    destreza = destreza + 1
 }
