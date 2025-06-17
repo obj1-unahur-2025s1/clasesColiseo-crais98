@@ -13,15 +13,14 @@ class mirmillones{
   var salud = 100
   var arma
   var armadura
-  var proteccion = 0
   var fuerza
   var daño = 0
   method cambiarArmaA(unArma){
     arma = unArma
   }
   method puntosArmadura(){
-    proteccion = proteccion + if(armadura==casco) 10 else 5 + self.destreza()*0.1
-  }// como manejo casco o escudo?
+    if(armadura==casco) 10 else 5 + self.destreza()*0.1
+  }// objeto o string en condición
   method defensa() = self.puntosArmadura + destreza
   method destreza() = 15
   method cambiarArmadura(unaArmadura){
