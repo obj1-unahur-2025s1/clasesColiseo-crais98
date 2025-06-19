@@ -1,3 +1,16 @@
+class Grupo{
+  const nombre
+  const gladiadores = []
+  method cantidadPeleasRegistradas()
+  method agregarGladiador(unGladiador){
+    gladiadores.add(unGladiador)
+  }
+  method quitarGladiador(unGladiador){
+    gladiadores.remove(unGladiador)
+  }  
+}
+
+
 class ArmaFilo{
   var filo
   var longitud 
