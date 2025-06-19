@@ -8,6 +8,7 @@ class Grupo{
   method quitarGladiador(unGladiador){
     gladiadores.remove(unGladiador)
   }  
+  method campeonMasFuerte() = gladiador.max({p=>p.fuerza()})
 }
 
 
