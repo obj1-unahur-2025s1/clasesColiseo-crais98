@@ -8,8 +8,9 @@ class Grupo{
   method quitarGladiador(unGladiador){
     gladiadores.remove(unGladiador)
   }  
-  method campeonMasFuerte() = gladiador.max({p=>p.fuerza()})
-}
+  method campeonMasFuerte() = gladiador.filter({p=>p.salud()>1})
+}.max({p=>p.fuerza()})// se puede crear estaVivo en la super clase
+
 
 
 class ArmaFilo{
